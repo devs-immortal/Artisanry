@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "artisanry",
+  "version": "${version}",
+
+  "name": "Artisanry",
+  "description": "Custom tools",
+  "authors": [
+    "SollyW"
+  ],
+
+  "license": "a",
+  "icon": "assets/artisanry/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.immortaldevs.aptitude.base.Aptitude",
+      "net.immortaldevs.artisanry.Artisanry"
+    ],
+    "client": [
+      "net.immortaldevs.artisanry.client.ArtisanryClient"
+    ]
+  },
+  "mixins": [
+    "aptitude.mixins.json",
+    "artisanry.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  }
+}
