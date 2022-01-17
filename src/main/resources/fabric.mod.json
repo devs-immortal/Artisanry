@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Artisanry",
-  "description": "Custom tools",
+  "description": "Modular tools",
   "authors": [
     "SollyW"
   ],
@@ -15,20 +15,22 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.immortaldevs.aptitude.base.Aptitude",
-      "net.immortaldevs.artisanry.Artisanry"
+      "net.immortaldevs.artisanry.Artisanry",
+      "net.immortaldevs.skewer.Skewer"
     ],
     "client": [
       "net.immortaldevs.artisanry.client.ArtisanryClient"
     ]
   },
   "mixins": [
-    "aptitude.mixins.json",
-    "artisanry.mixins.json"
+    "artisanry.mixins.json",
+    "skewer.mixins.json"
   ],
 
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "sar": "*",
+    "fabricloader": "*",
     "minecraft": "1.18.x",
     "java": ">=17"
   }

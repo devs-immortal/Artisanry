@@ -1,6 +1,6 @@
 package net.immortaldevs.artisanry;
 
-import net.immortaldevs.artisanry.aptitude.ArtisanryComponents;
+import net.immortaldevs.artisanry.sar.ArtisanryComponents;
 import net.immortaldevs.artisanry.item.ArtisanryItems;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
