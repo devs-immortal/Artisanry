@@ -38,6 +38,10 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(project.java_version)
+    }
+
     withSourcesJar()
 }
 
