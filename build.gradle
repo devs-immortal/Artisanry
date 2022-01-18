@@ -13,7 +13,7 @@ version = project.artisanry_version
 group = "net.immortaldevs"
 
 repositories {
-    mavenLocal()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -22,7 +22,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fapi_version}"
-    modImplementation "net.immortaldevs:sar:${project.sar_version}"
+    modImplementation "com.github.devs-immortal:Some-Assembly-Required:${project.sar_version}"
 }
 
 processResources {
