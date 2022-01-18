@@ -2,6 +2,7 @@ package net.immortaldevs.artisanry.sar;
 
 import net.immortaldevs.sar.api.ComponentData;
 import net.immortaldevs.sar.api.Modifier;
+import net.immortaldevs.sar.base.client.modifier.LayeredItemModelModifier;
 import net.immortaldevs.sar.base.client.modifier.SpriteLayerModifier;
 
 import java.util.function.BiConsumer;
@@ -28,6 +29,12 @@ public final class ModifierHelper {
             } else {
                 consumer.accept(data, modifier);
             }
+        });
+    }
+
+    public ModifierHelper filterLayeredItemModelModifiers() {
+        return this.add(consumer -> (data, modifier) -> {
+            if (!(modifier instanceof LayeredItemModelModifier)) consumer.accept(data, modifier);
         });
     }
 }
