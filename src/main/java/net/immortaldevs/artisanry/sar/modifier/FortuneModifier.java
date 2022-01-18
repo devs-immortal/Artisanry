@@ -13,9 +13,9 @@ public interface FortuneModifier extends Modifier {
 
     @Override
     default void register(ModifierMap modifierMap) {
-        modifierMap.append(FortuneModifier.class, this, fortuneModifier -> (stack, consumer) -> {
-            fortuneModifier.apply(stack, consumer);
-            this.apply(stack, consumer);
+        modifierMap.merge(FortuneModifier.class, this, (a, b) -> (stack, consumer) -> {
+            a.apply(stack, consumer);
+            b.apply(stack, consumer);
         });
     }
 }

@@ -1,7 +1,7 @@
 package net.immortaldevs.skewer.mixin;
 
 import com.mojang.datafixers.util.Pair;
-import net.immortaldevs.sar.base.Util;
+import net.immortaldevs.sar.base.ModifierUtils;
 import net.immortaldevs.skewer.sar.FoodModifier;
 import net.immortaldevs.skewer.item.FoodComponentExt;
 import net.immortaldevs.skewer.item.SkewerFoodComponent;
@@ -29,7 +29,7 @@ public abstract class FoodComponentMixin implements FoodComponentExt {
 
             @Override
             public void skewer$init(ItemStack stack) {
-                Util.acceptModifier(stack, FoodModifier.class, foodModifier ->
+                ModifierUtils.acceptModifier(stack, FoodModifier.class, foodModifier ->
                         foodModifier.apply(this.children::add));
             }
 

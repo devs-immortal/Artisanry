@@ -1,6 +1,7 @@
 package net.immortaldevs.skewer.mixin;
 
 import com.mojang.datafixers.util.Pair;
+import net.immortaldevs.sar.base.ModifierUtils;
 import net.immortaldevs.skewer.sar.FoodModifier;
 import net.immortaldevs.skewer.item.FoodComponentExt;
 import net.immortaldevs.skewer.item.SkewerItem;
@@ -19,8 +20,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.List;
-
-import static net.immortaldevs.sar.base.Util.acceptModifier;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
@@ -44,7 +43,7 @@ public abstract class LivingEntityMixin {
             locals = LocalCapture.CAPTURE_FAILHARD)
     private void applyFoodEffects(ItemStack stack, World world, LivingEntity targetEntity, CallbackInfo ci, Item item, List<Pair<StatusEffectInstance, Float>> list) {
         if (item instanceof SkewerItem) {
-            acceptModifier(stack, FoodModifier.class, foodModifier ->
+            ModifierUtils.acceptModifier(stack, FoodModifier.class, foodModifier ->
                     foodModifier.apply(foodComponent -> list.addAll(foodComponent.getStatusEffects())));
         }
     }
