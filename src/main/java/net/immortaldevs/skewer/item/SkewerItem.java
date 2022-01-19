@@ -1,7 +1,7 @@
 package net.immortaldevs.skewer.item;
 
+import net.immortaldevs.sar.api.ComponentData;
 import net.immortaldevs.sar.base.ItemStackExt;
-import net.immortaldevs.sar.base.RootComponentData;
 import net.immortaldevs.skewer.sar.FoodModifier;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,9 +21,9 @@ public class SkewerItem extends Item {
     }
 
     public static boolean hasFood(ItemStack stack) {
-        RootComponentData rootComponentData = ((ItemStackExt) (Object) stack).sar$getComponentRoot();
+        ComponentData rootComponentData = ((ItemStackExt) (Object) stack).sar$getComponentRoot();
         return rootComponentData != null
-                && rootComponentData.modifierMap.contains(FoodModifier.class);
+                && rootComponentData.modifierMap().contains(FoodModifier.class);
     }
 
     @Override

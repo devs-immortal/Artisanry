@@ -16,7 +16,7 @@ public class PickaxeComponent extends Component {
     @Override
     public void init(ComponentData data) {
         data.addModifier(new LayeredItemModelModifier(data.modifierMap()));
-        data.addChild("head", HEAD_HELPER.build(data));
-        data.addChild("handle", HANDLE_HELPER.build(data));
+        data.loadChild("head", HEAD_HELPER.build(data));
+        data.loadChild("handle", HANDLE_HELPER.build(data));
     }
 }

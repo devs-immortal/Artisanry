@@ -16,6 +16,6 @@ public class IronPickaxeHeadComponent extends Component {
             data.addModifier(new LayeredItemModelModifier(data.modifierMap()));
         }
 
-        data.addChildren("modifiers");
+        data.loadChildren("modifiers");
     }
 }
