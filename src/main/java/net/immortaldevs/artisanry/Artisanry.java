@@ -1,6 +1,6 @@
 package net.immortaldevs.artisanry;
 
-import net.immortaldevs.artisanry.sar.ArtisanryComponents;
+import net.immortaldevs.artisanry.component.ArtisanryComponents;
 import net.immortaldevs.artisanry.item.ArtisanryItems;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
@@ -13,8 +13,8 @@ public class Artisanry implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        ArtisanryItems.init();
         ArtisanryComponents.init();
-        ArtisanryItems.register();
     }
 
     public static Identifier id(String path) {

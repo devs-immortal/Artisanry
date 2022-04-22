@@ -15,16 +15,17 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.immortaldevs.artisanry.Artisanry",
-      "net.immortaldevs.skewer.Skewer"
+      "net.immortaldevs.artisanry.Artisanry"
     ],
     "client": [
       "net.immortaldevs.artisanry.client.ArtisanryClient"
+    ],
+    "fabric-datagen": [
+      "net.immortaldevs.artisanry.data.ArtisanryDataGenerator"
     ]
   },
   "mixins": [
-    "artisanry.mixins.json",
-    "skewer.mixins.json"
+    "artisanry.mixins.json"
   ],
 
   "depends": {
