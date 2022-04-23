@@ -21,7 +21,6 @@ public final class ArtisanryItems {
     public static final Item IRON_CROSSBOW_LIMB = new Item(new Item.Settings());
     public static final Item OAK_CROSSBOW_LIMB = new Item(new Item.Settings());
     public static final Item IRON_DART = new Item(new Item.Settings());
-    public static final Item IRON_DWARF_GUARD = new Item(new Item.Settings());
     public static final Item IRON_ESTOC_BLADE = new Item(new Item.Settings());
     public static final Item FEATHER_FLETCHING = new Item(new Item.Settings());
     public static final Item IRON_GREATARROW_HEAD = new Item(new Item.Settings());
@@ -33,7 +32,6 @@ public final class ArtisanryItems {
     public static final Item IRON_HAMMER_HEAD = new Item(new Item.Settings());
     public static final Item IRON_HOE_HEAD = new Item(new Item.Settings());
     public static final Item IRON_KNIFE_BLADE = new Item(new Item.Settings());
-    public static final Item IRON_MOON_GUARD = new Item(new Item.Settings());
     public static final Item IRON_PARTIZAN_BLADE = new Item(new Item.Settings());
     public static final PickaxeHeadItem IRON_PICKAXE_HEAD = new PickaxeHeadItem(new Item.Settings());
     public static final Item IRON_PROSPECTING_PICKAXE_HEAD = new Item(new Item.Settings());
@@ -63,7 +61,6 @@ public final class ArtisanryItems {
         Registry.register(Registry.ITEM, id("iron_crossbow_limb"), IRON_CROSSBOW_LIMB);
         Registry.register(Registry.ITEM, id("oak_crossbow_limb"), OAK_CROSSBOW_LIMB);
         Registry.register(Registry.ITEM, id("iron_dart"), IRON_DART);
-        Registry.register(Registry.ITEM, id("iron_dwarf_guard"), IRON_DWARF_GUARD);
         Registry.register(Registry.ITEM, id("iron_estoc_blade"), IRON_ESTOC_BLADE);
         Registry.register(Registry.ITEM, id("feather_fletching"), FEATHER_FLETCHING);
         Registry.register(Registry.ITEM, id("iron_greatarrow_head"), IRON_GREATARROW_HEAD);
@@ -75,7 +72,6 @@ public final class ArtisanryItems {
         Registry.register(Registry.ITEM, id("iron_hammer_head"), IRON_HAMMER_HEAD);
         Registry.register(Registry.ITEM, id("iron_hoe_head"), IRON_HOE_HEAD);
         Registry.register(Registry.ITEM, id("iron_knife_blade"), IRON_KNIFE_BLADE);
-        Registry.register(Registry.ITEM, id("iron_moon_guard"), IRON_MOON_GUARD);
         Registry.register(Registry.ITEM, id("iron_partizan_blade"), IRON_PARTIZAN_BLADE);
         Registry.register(Registry.ITEM, id("iron_pickaxe_head"), IRON_PICKAXE_HEAD);
         Registry.register(Registry.ITEM, id("iron_prospecting_pickaxe_head"), IRON_PROSPECTING_PICKAXE_HEAD);

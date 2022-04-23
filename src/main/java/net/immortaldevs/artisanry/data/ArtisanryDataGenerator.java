@@ -49,7 +49,6 @@ public class ArtisanryDataGenerator implements DataGeneratorEntrypoint {
             generator.register(ArtisanryItems.IRON_CROSSBOW_LIMB, Models.GENERATED);
             generator.register(ArtisanryItems.OAK_CROSSBOW_LIMB, Models.GENERATED);
             generator.register(ArtisanryItems.IRON_DART, Models.GENERATED);
-            generator.register(ArtisanryItems.IRON_DWARF_GUARD, Models.GENERATED);
             generator.register(ArtisanryItems.IRON_ESTOC_BLADE, Models.GENERATED);
             generator.register(ArtisanryItems.FEATHER_FLETCHING, Models.GENERATED);
             generator.register(ArtisanryItems.IRON_GREATARROW_HEAD, Models.GENERATED);
@@ -61,7 +60,6 @@ public class ArtisanryDataGenerator implements DataGeneratorEntrypoint {
             generator.register(ArtisanryItems.IRON_HAMMER_HEAD, Models.GENERATED);
             generator.register(ArtisanryItems.IRON_HOE_HEAD, Models.GENERATED);
             generator.register(ArtisanryItems.IRON_KNIFE_BLADE, Models.GENERATED);
-            generator.register(ArtisanryItems.IRON_MOON_GUARD, Models.GENERATED);
             generator.register(ArtisanryItems.IRON_PARTIZAN_BLADE, Models.GENERATED);
             generator.register(ArtisanryItems.IRON_PICKAXE_HEAD, Models.GENERATED);
             generator.register(ArtisanryItems.IRON_PROSPECTING_PICKAXE_HEAD, Models.GENERATED);
@@ -91,7 +89,6 @@ public class ArtisanryDataGenerator implements DataGeneratorEntrypoint {
             generator.register(ArtisanryComponents.IRON_CROSSBOW_LIMB, ArtisanryItems.IRON_CROSSBOW_LIMB);
             generator.register(ArtisanryComponents.OAK_CROSSBOW_LIMB, ArtisanryItems.OAK_CROSSBOW_LIMB);
             generator.register(ArtisanryComponents.IRON_DART, ArtisanryItems.IRON_DART);
-            generator.register(ArtisanryComponents.IRON_DWARF_GUARD, ArtisanryItems.IRON_DWARF_GUARD);
             generator.register(ArtisanryComponents.IRON_ESTOC_BLADE, ArtisanryItems.IRON_ESTOC_BLADE);
             generator.register(ArtisanryComponents.FEATHER_FLETCHING, ArtisanryItems.FEATHER_FLETCHING);
             generator.register(ArtisanryComponents.IRON_GREATARROW_HEAD, ArtisanryItems.IRON_GREATARROW_HEAD);
@@ -103,7 +100,6 @@ public class ArtisanryDataGenerator implements DataGeneratorEntrypoint {
             generator.register(ArtisanryComponents.IRON_HAMMER_HEAD, ArtisanryItems.IRON_HAMMER_HEAD);
             generator.register(ArtisanryComponents.IRON_HOE_HEAD, ArtisanryItems.IRON_HOE_HEAD);
             generator.register(ArtisanryComponents.IRON_KNIFE_BLADE, ArtisanryItems.IRON_KNIFE_BLADE);
-            generator.register(ArtisanryComponents.IRON_MOON_GUARD, ArtisanryItems.IRON_MOON_GUARD);
             generator.register(ArtisanryComponents.IRON_PARTIZAN_BLADE, ArtisanryItems.IRON_PARTIZAN_BLADE);
             generator.register(PickaxeHeadComponents.IRON_PICKAXE_HEAD, ArtisanryItems.IRON_PICKAXE_HEAD);
             generator.register(ArtisanryComponents.IRON_PROSPECTING_PICKAXE_HEAD, ArtisanryItems.IRON_PROSPECTING_PICKAXE_HEAD);

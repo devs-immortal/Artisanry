@@ -24,7 +24,6 @@ public final class ArtisanryComponents {
     public static final Component IRON_CROSSBOW_LIMB = new Component();
     public static final Component OAK_CROSSBOW_LIMB = new Component();
     public static final Component IRON_DART = new Component();
-    public static final Component IRON_DWARF_GUARD = new Component();
     public static final Component IRON_ESTOC_BLADE = new Component();
     public static final Component FEATHER_FLETCHING = new Component();
     public static final Component IRON_GREATARROW_HEAD = new Component();
@@ -34,7 +33,6 @@ public final class ArtisanryComponents {
     public static final Component IRON_HAMMER_HEAD = new Component();
     public static final Component IRON_HOE_HEAD = new Component();
     public static final Component IRON_KNIFE_BLADE = new Component();
-    public static final Component IRON_MOON_GUARD = new Component();
     public static final Component IRON_PARTIZAN_BLADE = new Component();
     public static final Component IRON_PROSPECTING_PICKAXE_HEAD = new Component();
     public static final Component LEATHER_RAGS = new Component();
@@ -62,7 +60,6 @@ public final class ArtisanryComponents {
         Registry.register(SarRegistries.COMPONENT, id("iron_crossbow_limb"), IRON_CROSSBOW_LIMB);
         Registry.register(SarRegistries.COMPONENT, id("oak_crossbow_limb"), OAK_CROSSBOW_LIMB);
         Registry.register(SarRegistries.COMPONENT, id("iron_dart"), IRON_DART);
-        Registry.register(SarRegistries.COMPONENT, id("iron_dwarf_guard"), IRON_DWARF_GUARD);
         Registry.register(SarRegistries.COMPONENT, id("iron_estoc_blade"), IRON_ESTOC_BLADE);
         Registry.register(SarRegistries.COMPONENT, id("feather_fletching"), FEATHER_FLETCHING);
         Registry.register(SarRegistries.COMPONENT, id("iron_greatarrow_head"), IRON_GREATARROW_HEAD);
@@ -74,7 +71,6 @@ public final class ArtisanryComponents {
         Registry.register(SarRegistries.COMPONENT, id("iron_hammer_head"), IRON_HAMMER_HEAD);
         Registry.register(SarRegistries.COMPONENT, id("iron_hoe_head"), IRON_HOE_HEAD);
         Registry.register(SarRegistries.COMPONENT, id("iron_knife_blade"), IRON_KNIFE_BLADE);
-        Registry.register(SarRegistries.COMPONENT, id("iron_moon_guard"), IRON_MOON_GUARD);
         Registry.register(SarRegistries.COMPONENT, id("iron_partizan_blade"), IRON_PARTIZAN_BLADE);
         Registry.register(SarRegistries.COMPONENT, id("iron_pickaxe_head"), IRON_PICKAXE_HEAD);
         Registry.register(SarRegistries.COMPONENT, id("iron_prospecting_pickaxe_head"), IRON_PROSPECTING_PICKAXE_HEAD);

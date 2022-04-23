@@ -20,7 +20,6 @@ public class ArtisanryComponentModels {
         new TestComponentModel(ArtisanryComponents.IRON_CROSSBOW_LIMB);
         new TestComponentModel(ArtisanryComponents.OAK_CROSSBOW_LIMB);
         new TestComponentModel(ArtisanryComponents.IRON_DART);
-        new TestComponentModel(ArtisanryComponents.IRON_DWARF_GUARD);
         new TestComponentModel(ArtisanryComponents.IRON_ESTOC_BLADE);
         new TestComponentModel(ArtisanryComponents.FEATHER_FLETCHING);
         new TestComponentModel(ArtisanryComponents.IRON_GREATARROW_HEAD);
@@ -32,7 +31,6 @@ public class ArtisanryComponentModels {
         new TestComponentModel(ArtisanryComponents.IRON_HAMMER_HEAD);
         new TestComponentModel(ArtisanryComponents.IRON_HOE_HEAD);
         new TestComponentModel(ArtisanryComponents.IRON_KNIFE_BLADE);
-        new TestComponentModel(ArtisanryComponents.IRON_MOON_GUARD);
         new TestComponentModel(ArtisanryComponents.IRON_PARTIZAN_BLADE);
         new PickaxeHeadComponentModel(PickaxeHeadComponents.IRON_PICKAXE_HEAD);
         new TestComponentModel(ArtisanryComponents.IRON_PROSPECTING_PICKAXE_HEAD);
