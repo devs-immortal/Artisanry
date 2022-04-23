@@ -4,6 +4,7 @@
   "package": "net.immortaldevs.artisanry.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ItemMixin",
     "ItemStackMixin"
   ],
   "client": [

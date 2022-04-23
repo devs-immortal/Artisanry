@@ -6,7 +6,7 @@ import net.minecraft.util.registry.Registry;
 import static net.immortaldevs.artisanry.Artisanry.id;
 
 public final class ArtisanryItems {
-    public static final Item PICKAXE = new Item(new Item.Settings().maxCount(1));
+    public static final ModularPickaxeItem PICKAXE = new ModularPickaxeItem(new Item.Settings().maxCount(1));
     public static final Item IRON_ARROW_HEAD = new Item(new Item.Settings());
     public static final Item IRON_AXE_HEAD = new Item(new Item.Settings());
     public static final Item IRON_BOW_LIMB = new Item(new Item.Settings());

@@ -2,6 +2,7 @@ package net.immortaldevs.artisanry.component;
 
 import net.fabricmc.yarn.constants.MiningLevels;
 import net.immortaldevs.artisanry.modifiers.DurabilityModifier;
+import net.immortaldevs.artisanry.modifiers.MiningSpeedModifier;
 import net.immortaldevs.artisanry.modifiers.ToolSuitabilityModifier;
 import net.immortaldevs.sar.api.Component;
 import net.immortaldevs.sar.api.LarvalComponentData;
@@ -12,6 +13,7 @@ public final class PickaxeHeadComponents {
         @Override
         public void init(LarvalComponentData data) {
             data.addModifier(ToolSuitabilityModifier.of(MiningLevels.IRON, BlockTags.PICKAXE_MINEABLE));
+            data.addModifier(MiningSpeedModifier.add(5f, BlockTags.PICKAXE_MINEABLE));
             data.addModifier(DurabilityModifier.add(180));
         }
     };

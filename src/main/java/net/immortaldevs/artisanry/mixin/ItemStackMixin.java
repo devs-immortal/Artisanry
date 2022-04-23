@@ -2,6 +2,7 @@ package net.immortaldevs.artisanry.mixin;
 
 import net.immortaldevs.artisanry.modifiers.DamageModifier;
 import net.immortaldevs.artisanry.modifiers.DurabilityModifier;
+import net.immortaldevs.artisanry.modifiers.MiningSpeedModifier;
 import net.immortaldevs.artisanry.modifiers.ToolSuitabilityModifier;
 import net.immortaldevs.divineintervention.injection.ModifyOperand;
 import net.immortaldevs.sar.base.SarItemStack;
@@ -19,14 +20,24 @@ import org.spongepowered.asm.mixin.injection.Slice;
 
 import java.util.Random;
 
-@SuppressWarnings("unused")
 @Mixin(ItemStack.class)
 public abstract class ItemStackMixin implements SarItemStack {
-    @Shadow public abstract Item getItem();
+    @Shadow
+    public abstract Item getItem();
 
     @ModifyOperand(method = "getMaxDamage",
-            at = @At("RETURN"))
+            at = @At(value = "RETURN",
+                    shift = At.Shift.BEFORE))
     private int getMaxDamage(int value) {
+        DurabilityModifier modifier = this.getModifiers().get(DurabilityModifier.class);
+        if (modifier == null) return value;
+        return modifier.apply(value, (ItemStack) (Object) this);
+    }
+
+    @ModifyOperand(method = "isDamageable",
+            at = @At(value = "INVOKE",
+                    target = "Lnet/minecraft/item/Item;getMaxDamage()I"))
+    private int isDamageable(int value) {
         DurabilityModifier modifier = this.getModifiers().get(DurabilityModifier.class);
         if (modifier == null) return value;
         return modifier.apply(value, (ItemStack) (Object) this);
@@ -55,5 +66,14 @@ public abstract class ItemStackMixin implements SarItemStack {
         ToolSuitabilityModifier modifier = this.getModifiers().get(ToolSuitabilityModifier.class);
         if (modifier == null) return suitable;
         return modifier.apply(suitable, (ItemStack) (Object) this, state);
+    }
+
+    @ModifyOperand(method = "getMiningSpeedMultiplier",
+            at = @At(value = "RETURN",
+                    shift = At.Shift.BEFORE))
+    private float getMiningSpeedMultiplier(float multiplier, BlockState state) {
+        MiningSpeedModifier modifier = this.getModifiers().get(MiningSpeedModifier.class);
+        if (modifier == null) return multiplier;
+        return modifier.apply(multiplier, (ItemStack) (Object) this, state);
     }
 }
