@@ -7,6 +7,9 @@ import net.immortaldevs.artisanry.modifiers.ToolSuitabilityModifier;
 import net.immortaldevs.divineintervention.injection.ModifyOperand;
 import net.immortaldevs.sar.base.SarItemStack;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -15,10 +18,13 @@ import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Slice;
 
+import java.util.Map;
 import java.util.Random;
+import java.util.UUID;
 
 @Mixin(ItemStack.class)
 public abstract class ItemStackMixin implements SarItemStack {
@@ -75,5 +81,40 @@ public abstract class ItemStackMixin implements SarItemStack {
         MiningSpeedModifier modifier = this.getModifiers().get(MiningSpeedModifier.class);
         if (modifier == null) return multiplier;
         return modifier.apply(multiplier, (ItemStack) (Object) this, state);
+    }
+
+    // I hate this
+    @ModifyOperand(method = "getTooltip",
+            at = @At(value = "INVOKE",
+                    target = "Ljava/util/Map$Entry;getValue()Ljava/lang/Object;",
+                    shift = At.Shift.BEFORE),
+            allow = 1)
+    private Map.Entry<EntityAttribute, EntityAttributeModifier> getTooltip(Map.Entry<EntityAttribute, EntityAttributeModifier> entry) {
+        interface ModifiedEntry extends Map.Entry<EntityAttribute, EntityAttributeModifier> {
+            @Override
+            default EntityAttribute getKey() {
+                throw new Error();
+            }
+
+            @Override
+            default EntityAttributeModifier setValue(EntityAttributeModifier value) {
+                throw new Error();
+            }
+        }
+
+        EntityAttribute attribute = entry.getKey();
+        if (attribute == EntityAttributes.GENERIC_ATTACK_DAMAGE) {
+            EntityAttributeModifier modifier = entry.getValue();
+            return (ModifiedEntry) () -> new EntityAttributeModifier(ItemAccessor.getAttackDamageModifierId(),
+                    modifier.getName(),
+                    modifier.getValue(),
+                    modifier.getOperation());
+        } else if (attribute == EntityAttributes.GENERIC_ATTACK_SPEED) {
+            EntityAttributeModifier modifier = entry.getValue();
+            return (ModifiedEntry) () -> new EntityAttributeModifier(ItemAccessor.getAttackSpeedModifierId(),
+                    modifier.getName(),
+                    modifier.getValue(),
+                    modifier.getOperation());
+        } else return entry;
     }
 }
