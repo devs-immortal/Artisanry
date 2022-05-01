@@ -1,5 +1,2 @@
 # Artisanry
-
-## Azzy's nuts are fat and juicy and full of incubus boi cream
-
-a
+A work in progress modular tool and weapon mod
